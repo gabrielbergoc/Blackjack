@@ -3,7 +3,8 @@ from jogadores import Jogador
 import random
 
 def main():
-    print('Bem vindo ao jogo de Blackjack')
+    print('*** Bem vindo ao jogo de Blackjack ***')
+    print()
     b = Baralho()
     global baralho
     baralho = b.baralho
@@ -21,10 +22,10 @@ def main():
                 vez_do_jogador(opcao)
                 vez_da_banca()
             else:
-                vez_do_jogador()
+                vez_do_jogador(opcao)
                 print('A banca parou')
         elif opcao == 'n':
-            while banca.soma < 17:
+            while banca.soma < jogador.soma or banca.soma < 21:
                 vez_da_banca()
             break
         else:
